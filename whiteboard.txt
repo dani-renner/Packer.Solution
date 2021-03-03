@@ -1,0 +1,42 @@
+
+
+Class: Item
+List: Item _instances
+properties:
+- name 
+- packed / notpacked
+- purchased / notpurchased
+
+Home
+[HttpGet("/")]
+Index() {View()}
+
+Item
+[HttpGet("/items")]
+Index()
+allItems = Item.GetAll()
+return View(allItems)
+
+HttpGet("/items/new")
+New()
+View();
+
+[HttpPost("/items")]
+Create(string name, bool packed, bool purchased)
+{ Item = new Item (name, packed, purchased)
+return redirectoaction("index")
+}
+
+HttpPost("items/delete")
+DeleteAll()
+{
+  Item.ClearAll()
+  return View();
+}
+
+[HttpGet("items/{id}")]
+Show(int id)
+{
+  Item = Item.Find(id);
+  return View(Item);
+}

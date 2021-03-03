@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Packer.Models;
 using System.Collections.Generic;
-
+using System;
 namespace Packer.Controllers
 {
   public class ItemsController : Controller
@@ -23,11 +23,19 @@ namespace Packer.Controllers
       Item userItem = new Item(name, packed, purchased);
       return RedirectToAction("Index");
     }
-    [HttpGet("/items/{id}")]
-    public ActionResult Show(int id)
+    [HttpGet("/items/{id}/edit")]
+    public ActionResult Edit(int id)
     {
-      Item findItem = Item.Find(id);
-      return View(findItem);
+      Console.WriteLine("id Edit: " + id.ToString());
+      return View(id);
+    }
+    [HttpPost("/items/{id}")]
+    public ActionResult Update(int id, string name, bool packed, bool purchased)
+    {
+      // Item itembyId = Item.Find(id);
+      Console.WriteLine("id Update: " + id.ToString());
+      Item.Edit(id, name, packed, purchased);
+      return RedirectToAction("Index");
     }
   }
 }

@@ -33,6 +33,13 @@ namespace Packer.Models
     {
       return _instances[searchId-1];
     }
+
+    public static void Edit(int id, string name, bool packed, bool purchased)
+    {      
+      _instances[id-1].Name = name;
+      _instances[id-1].Packed = packed;
+      _instances[id-1].Purchased = purchased;
+    }
   }
 
 }

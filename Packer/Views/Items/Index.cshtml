@@ -7,9 +7,10 @@
 <ul>
   @foreach(Item item in Model)
   {
-    <li>@item.Name</li>
+    <li>@item.Name <button type="submit" id="edit"><a href="/items/@item.Id/edit">Edit</a></button></li>
     <li>@(item.Packed == true ? "Packed!" : "Not packed!")</li>
     <li>@(item.Purchased == true ? "Purchased!" : "Not purchased!")</li>
     <br>
   }
 </ul>
+<a href="/items/new">Add new thing to pack</a>

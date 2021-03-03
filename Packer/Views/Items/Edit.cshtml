@@ -1,0 +1,25 @@
+<form action="/items/@Id" method="post">
+  <label for="name">Edit your item!</label>
+  <input id="name" name="name" type="text" required>
+  <div>
+    <label for="packed">  
+      Packed
+      <input id="packed" name="packed" value="true" type="radio">
+    </label>
+    <label for="notPacked">
+      Not Packed
+      <input id="notPacked" name="packed" value="false" type="radio" checked>
+    </label>
+  </div>
+  <div>
+    <label for="purchased">
+      Purchased
+      <input id="purchased" name="purchased" value="true" type="radio">  
+    </label>
+    <label for="notPurchased">
+      Not Purchased 
+      <input id="notPurchased" name="purchased" value="false" type="radio" checked> 
+    </label>
+  </div>
+  <button type="submit">Submit</button>
+</form>
