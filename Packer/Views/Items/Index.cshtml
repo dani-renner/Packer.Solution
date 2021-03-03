@@ -1,0 +1,8 @@
+@using Packer.Models;
+
+<ul>
+  @foreach(Item item in Model)
+  {
+    <li><a href='items/@item.Id'>@item.Name</a></li>
+  }
+</ul
