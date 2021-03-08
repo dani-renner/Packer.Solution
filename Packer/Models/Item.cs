@@ -7,7 +7,7 @@ namespace Packer.Models
     public string Name { get; set; }
     public bool Packed { get; set; }
     public bool Purchased { get; set; }
-    public int Id { get; }
+    public int Id { get; set;}
 
     private static List<Item> _instances = new List<Item>{};
 
